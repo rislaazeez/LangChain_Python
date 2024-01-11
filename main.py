@@ -1,8 +1,3 @@
-from dbconnect.connect import connect_db
-from langchain.agents import AgentExecutor, Tool, ZeroShotAgent
-from langchain.chains import LLMChain
-from langchain.memory import ConversationBufferMemory
-from langchain_community.chat_message_histories import RedisChatMessageHistory
 from langchain_openai import OpenAI
 from langchain.llms.openai import OpenAI
 from langchain.agents.agent_types import AgentType
@@ -11,9 +6,9 @@ import time
 
 csv_file_path = "/Users/rislaazeez/Downloads/mobile_prices_2023.csv"
 
-def main():
 
-    llm=OpenAI(temperature=0)
+def main():
+    llm = OpenAI(temperature=0)
 
     agent = create_csv_agent(
         llm,
@@ -38,11 +33,4 @@ def main():
 
 
 if __name__ == '__main__':
-    # db = connect_db("mongodb://localhost:27017/")
-    # print(db)
     main()
-
-
-
-
-
